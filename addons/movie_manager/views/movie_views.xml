@@ -1,0 +1,39 @@
+<odoo>
+    <!-- TREE VIEW -->
+    <record id="view_movie_tree" model="ir.ui.view">
+        <field name="name">movie.tree</field>
+        <field name="model">movie.movie</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="ranking"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_movie_form" model="ir.ui.view">
+        <field name="name">movie.form</field>
+        <field name="model">movie.movie</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="title"/>
+                    <field name="ranking"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_movie" model="ir.actions.act_window">
+        <field name="name">Películas</field>
+        <field name="res_model">movie.movie</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENÚ -->
+    <menuitem id="movie_menu_root" name="Películas"/>
+    <menuitem id="movie_menu_movies" name="Gestión de Películas" parent="movie_menu_root"/>
+    <menuitem id="movie_menu_action" name="Películas" parent="movie_menu_movies" action="action_movie"/>
+</odoo>

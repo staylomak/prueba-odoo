@@ -1,0 +1,13 @@
+<!-- CRON Fetch Movies from API - Execution every 1 minute with number of calls -1 -->
+<odoo>
+    <record id="ir_cron_fetch_movies" model="ir.cron">
+        <field name="name">Fetch Movies from API</field>
+        <field name="model_id" ref="model_movie_movie"/>
+        <field name="state">code</field>
+        <field name="code">model.fetch_movies_from_api()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">True</field>
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>
